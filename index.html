@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Alma Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+/* ================= GLOBAL ================= */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #2b0a2e, #4b1248, #1a0a1f);
+    color: #ffe6f2;
+}
+
+/* ================= NAVIGATION ================= */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(40, 10, 45, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #ff66cc;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: #ff66cc;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+}
+
+/* Offset fix for fixed navbar */
+section {
+    scroll-margin-top: 90px;
+}
+
+/* ================= HEADER ================= */
+header {
+    text-align: center;
+    padding: 120px 20px 40px;
+}
+
+.profile-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff66cc, #ff99dd);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: #2a0a2e;
+    font-weight: bold;
+    box-shadow: 0 8px 25px rgba(255,102,204,0.4);
+}
+
+header h1 {
+    margin: 15px 0 5px;
+    font-size: 32px;
+    color: #ff66cc;
+}
+
+header p {
+    margin: 0;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+    max-width: 950px;
+    margin: auto;
+    padding-bottom: 40px;
+}
+
+/* ================= SECTION BOX ================= */
+.section-box {
+    background: linear-gradient(145deg, #3a0d3d, #5c1a5e);
+    margin: 20px;
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(255,102,204,0.15);
+}
+
+h2 {
+    color: #ff66cc;
+    margin-top: 0;
+}
+
+ul li {
+    margin-bottom: 6px;
+    color: #ffd6f0;
+}
+
+/* ================= PROJECTS ================= */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: linear-gradient(145deg, #5c1a5e, #3a0d3d);
+    border: 1px solid #ff66cc;
+    border-radius: 12px;
+    padding: 16px;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(255,102,204,0.4);
+}
+
+.project-title {
+    font-weight: bold;
+    color: #ff66cc;
+    margin-bottom: 8px;
+}
+
+.view-btn {
+    background-color: #ff66cc;
+    color: #2a0a2e;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.view-btn:hover {
+    background-color: #e055b5;
+}
+
+.project-desc {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    font-size: 14px;
+    margin-top: 8px;
+    color: #ffd6f0;
+}
+
+.project-card.active .project-desc {
+    max-height: 200px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #1a0a1f;
+    color: #ff66cc;
+    border-top: 1px solid #ff66cc;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#objective">Objective</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HEADER -->
+<header>
+    <div class="profile-circle">AB</div>
+    <h1>Alma Fe Batuhan</h1>
+    <p>BS Information Technology - 3rd Year</p>
+</header>
+
+<div class="container">
+
+<!-- ABOUT -->
+<section id="about" class="section-box">
+    <h2>About Me</h2>
+    <p>
+        I am a 3rd year BS Information Technology student passionate about system development,
+        data analytics, and IoT solutions. I enjoy building practical systems and continuously
+        improving my technical and problem-solving skills.
+    </p>
+</section>
+
+<!-- OBJECTIVE -->
+<section id="objective" class="section-box">
+    <h2>Career Objective</h2>
+    <p>
+        To become a skilled IT professional and contribute to innovative technology solutions
+        while continuously enhancing my technical expertise.
+    </p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section-box">
+    <h2>Technical Skills</h2>
+    <ul>
+        <li>HTML & CSS</li>
+        <li>JavaScript</li>
+        <li>Arduino & IoT</li>
+        <li>Database Management</li>
+    </ul>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section-box">
+    <h2>Projects</h2>
+
+    <div class="projects-grid">
+
+        <div class="project-card">
+            <div class="project-title">Data Analytics</div>
+            <button class="view-btn" onclick="toggleCard(this)">View Details</button>
+            <div class="project-desc">
+                Analyzed datasets and created interactive dashboards to support data-driven decisions.
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-title">Banking System</div>
+            <button class="view-btn" onclick="toggleCard(this)">View Details</button>
+            <div class="project-desc">
+                Developed a banking system with account registration, transactions, and database integration.
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-title">Arduino Parking System</div>
+            <button class="view-btn" onclick="toggleCard(this)">View Details</button>
+            <div class="project-desc">
+                Built a smart parking system using sensors to monitor vehicle entry and space availability.
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-title">Nicey Burger Sales System</div>
+            <button class="view-btn" onclick="toggleCard(this)">View Details</button>
+            <div class="project-desc">
+                Designed a sales and inventory monitoring system to track transactions and generate reports.
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section-box">
+    <h2>Contact Information</h2>
+    <p>Email: almafebatuhan@gmail.com</p>
+    <p>Facebook: Alma Fe </p>
+    <p>Cellphone Number: 09276473226</p>
+</section>
+
+</div>
+
+<footer>
+    © 2026 Alma Fe Batuhan
+</footer>
+
+<script>
+function toggleCard(button) {
+    const card = button.parentElement;
+    card.classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
